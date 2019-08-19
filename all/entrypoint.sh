@@ -307,7 +307,7 @@ if [ $GEN_GATEWAY = true ]; then
     mkdir -p ${GATEWAY_DIR}
 
     protoc $PROTO_INCLUDE \
-		--grpc-gateway_out=logtostderr=true:$GATEWAY_DIR ${PROTO_FILES[@]}
+		--grpc-gateway_out=logtostderr=true,allow_delete_body=true:$GATEWAY_DIR ${PROTO_FILES[@]}
     protoc $PROTO_INCLUDE  \
 		--swagger_out=logtostderr=true:$GATEWAY_DIR ${PROTO_FILES[@]}
 fi
